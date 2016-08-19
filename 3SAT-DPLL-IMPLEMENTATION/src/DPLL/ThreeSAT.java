@@ -149,6 +149,7 @@ public class ThreeSAT {
 				vList[assignedCount] = vList[assignedCount] == 0 ? 1 : 0;
 				vList[assignedCount+(vList.length/2)] = vList[assignedCount] == 0 ? 1 : 0;
 				pred.updateClauses(assignedCount+1, vList[assignedCount], vList.length/2);
+				backTrackedCount++;
 				if(pred.isSatisfiable()){
 					assignedVariables.push(assignedCount);
 					assignedCount++;
@@ -169,6 +170,7 @@ public class ThreeSAT {
 				vList[assignedCount] = vList[assignedCount] == 0 ? 1 : 0;
 				vList[assignedCount+(vList.length/2)] = vList[assignedCount] == 0 ? 1 : 0;
 				pred.updateClauses(assignedCount+1, vList[assignedCount], vList.length/2);
+				backTrackedCount++;
 				if(pred.isSatisfiable()){
 					assignedVariables.push(assignedCount);
 					assignedCount++;
